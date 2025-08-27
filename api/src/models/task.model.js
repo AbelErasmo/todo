@@ -17,9 +17,10 @@ const taskSchema = new mongoose.Schema({
         type: String,
         require: true
     }
-
 }, {
     timestamps: true
 });
 
-export default mongoose.model('Task', taskSchema);
+const modelTask =  mongoose.model('Task', taskSchema);
+
+export default modelTask;
