@@ -1,10 +1,11 @@
 import express from "express";
-import path from 'path';
+// import path from 'path';
 import { fileURLToPath } from "url";
 import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
-import { clerkMiddleware } from "@clerk/express";
+import { clerkMiddleware } from "../middleware/auth.middleware.js";
+
 
 const app = express();
 

@@ -9,7 +9,9 @@ export const createTask = async (req, res) => {
     }
 
     const { title, description } = req.body;
+    console.time("auth");
     const { userId } = await req.auth();
+    console.timeEnd("auth");
 
     try {
         const existingTask = await Task.findOne({ title });
@@ -23,3 +25,5 @@ export const createTask = async (req, res) => {
         return res.status(500).json({ message: "Erro interno do servidor" });
     }
 }
+
+// export default taskController;
